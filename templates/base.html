@@ -1,0 +1,63 @@
+{% load static %}
+<!--  -->
+{% load i18n %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dashboard</title>
+
+    {% include 'base/css.html' %}
+
+</head>
+<!-- onload="" -->
+<body class="hold-transition sidebar-mini" >
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!-- Navbar -->
+        {% include 'starter/navbar.html' %}
+        {% include 'starter/sidebar.html' %}
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            {% include 'starter/page_header.html' %}
+            <div class="card-body">
+                {% if messages %}
+                    {% include 'base/messages.html' %}
+                {% else %}
+                {% endif %}
+            <!-- Main content -->
+            <section class="content">
+                <div class="card-body">
+                        {% block content %}
+                    <!--  -->
+                        {% endblock content %}
+                </div>
+
+            </section>
+            <!-- /.content -->
+
+        </div>
+        <!-- /.content-wrapper -->
+
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+        </aside>
+    </div>
+
+
+    {% include 'base/js.html' %}
+
+
+
+
+</body>
+
+</html>

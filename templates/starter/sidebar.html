@@ -1,0 +1,83 @@
+{% load static %}
+{% load i18n %}
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link">
+        <img src="{% static 'AdminLTE-master/dashboard_dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">admin</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <!-- {% static 'AdminLTE-master/dashboard_dist/img/user2-160x160.jpg' %} -->
+            {% if role == admin or role == supplier  %}
+                {% if profile.logo %}
+                    <img src="{{ profile.logo.url }}"
+                        class="img-circle elevation-2" alt="User Image">
+                {% else %}
+                    <img src="{% static 'images/user-icon.png' %}" class="img-circle elevation-2" alt="User Image">
+                {% endif %}
+            {% else %}
+            {% endif %}
+            </div>
+            <div class="info">
+                {% if role == admin %}
+                    <a href="" class="d-block">Profile</a>
+                {% elif role == supplier %}
+                    <a href="" class="d-block">Profile</a>
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
+
+
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-toggle="menu">
+                <!-- data-accordion="false" data-toggle="push-menu" -->
+                <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+                {% if role == admin or role == supplier %}
+                    <li class="nav-item">
+                    
+                        {% if role == supplier %}
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    {% trans 'Dashboard' %}
+                                </p>
+                            </a>
+                        {% elif role == admin %}
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    {% trans 'Dashboard' %}
+                                </p>
+                            </a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item has-treeview">
+
+
+                        </ul>
+                    </li>
+                    
+
+                {% else %}
+                {% endif %}
+                <!-- ! -->
+
+            </ul>
+            
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

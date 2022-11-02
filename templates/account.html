@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div >
+    <img  src="{{user.avatar.url}}"/>
+    <p>username : {{user.username}}</p>
+    <p>name : {{user.first_name}}  {{user.last_name}}</p>
+    {% if user.mobile  %}
+    <p>mobile:{{user.mobile}}</p>
+    {% endif %}
+</div>
+
+{% endblock content %}

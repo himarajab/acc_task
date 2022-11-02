@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+        <div >
+            <h1 >Create an Account</h1>
+
+            <div>
+            <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data" id="userdetail">
+                <div id="form-wrapper">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div >
+                        {{field|as_crispy_field}}
+                    </div>
+                    {% endfor %}
+                  <div>  
+                  <input  type="submit" value="Register"/>
+                  </div>
+               </div>
+            </form> 
+            </div>
+
+            <p >Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    
+
+
+{% endblock content %}

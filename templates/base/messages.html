@@ -1,0 +1,42 @@
+
+{% if messages %}
+
+<section class="section">
+
+    {% for message in messages %}
+
+        <div class="alert {{ message.tags }} alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Alert!</h5>
+            {{ message }}
+        </div>
+
+        <!-- <article class="my-5 alert alert-default-success">
+            <div class="message-body alert {{ message.tags }}" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                    style="color: black; margin: 5px; padding: 5px;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </article> -->
+
+    {% endfor %}
+    <br>
+
+</section>
+
+{% else %}
+
+{% endif %}
+
+<!-- 
+{% if messages %}
+    {% for message in messages %}
+    <div class="my-5 alert alert-success">
+        <h5 class="m-0">
+            {{ message }}
+        </h5>
+    </div>
+    {% endfor %}
+{% endif %} -->
